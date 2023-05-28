@@ -5,11 +5,14 @@ FROM nginx:latest
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get install -y
+    apt-get install vim -y
 
 # Tambem podemos copiar algo do computador para o container 
 # usando o comando COPY
 
-COPY html /usr/share/nginx
-# para roudar a image digita-se o comando
+COPY html/ /usr/share/nginx/html
+# para rodar a image digita-se o comando
+
 # docker run -it  iamrosada/nginx-with-vim-2  bash
+
+# para sair do container ( exit )
